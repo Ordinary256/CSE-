@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Supplier Record Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: aquamarine;
+      padding: 20px;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px;
+      max-width: 550px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .confirmation {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    #supplierForm {
+      background-image: url(lomp.jpg);
+    }
+
+    ul {
+      list-style-type: none;
+      margin-top: -25px;
+      display: flex;
+      padding-right: 30px;
+      background-color: black;
+      gap: 50px;
+      width: 50%;
+      position: fixed;
+      font-weight: bold;
+      border-radius: 100px;
+      justify-content: flex-end;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      padding: 20px;
+      width: fit-content;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3e3e3e;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #888;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Users.html">Users</a></li>
+      <li><a href="sales.html">Sales</a></li>
+      <li><a href="suppliers.html">Suppliers</a></li>
+    </ul>
+  </header><br><br>
+  <div class="logo-container">
+    <!-- SVG Icon for Furniture (Simple Chair) -->
+    <svg class="logo-icon" viewBox="0 0 64 64" fill="none">
+      <rect x="18" y="8" width="28" height="36" rx="4" fill="#8B4513" />
+      <rect x="14" y="36" width="36" height="8" fill="#A0522D" />
+      <rect x="18" y="44" width="6" height="16" fill="#5A2D0C" />
+      <rect x="40" y="44" width="6" height="16" fill="#5A2D0C" />
+    </svg>
+
+    <!-- Business Name and Tagline -->
+    <div>
+      <div class="logo-text">MWF</div>
+      <div class="tagline">Furniture | Carpentry|Woodwork</div>
+    </div>
+  </div>
+  <h1>Mayondo Wood Furniture</h1>
+
+  <form id="supplierForm">
+    <h2>Supplier Delivery Record</h2>
+
+    <!-- Supplier Information -->
+    <label for="supplierName">Supplier Full Name:</label>
+    <input type="text" id="supplierName" name="supplierName" required>
+
+    <label for="supplierPhone">Phone Number:</label>
+    <input type="tel" id="supplierPhone" name="supplierPhone" required>
+
+    <label for="supplierEmail">Email Address:</label>
+    <input type="email" id="supplierEmail" name="supplierEmail">
+
+    <!-- Supply Details -->
+    <label for="supplyDescription">Supplies Delivered (description):</label>
+    <textarea id="supplyDescription" name="supplyDescription" rows="3" required></textarea>
+
+    <label for="supplyAmount">Amount/Quantity:</label>
+    <input type="text" id="supplyAmount" name="supplyAmount" required>
+
+    <label for="deliveryDate">Date of Delivery:</label>
+    <input type="date" id="deliveryDate" name="deliveryDate" required>
+
+    <!-- Receiver Details -->
+    <label for="receiverName">Name of Person Who Received the Supplies:</label>
+    <input type="text" id="receiverName" name="receiverName" required>
+
+    <button type="submit">Record Supplier Entry</button>
+
+    <!-- Confirmation Message -->
+    <div class="confirmation" id="confirmationMessage">
+      ✅ Supplier delivery has been recorded successfully.
+    </div>
+  </form>
+
+  <script>
+    // Show confirmation message when form is submitted
+    document.getElementById('supplierForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop actual form submission
+
+      // Show confirmation message
+      document.getElementById('confirmationMessage').style.display = 'block';
+
+      // Reset the form after submission
+      this.reset();
+    });
+  </script> <br><br>
+  <!-- Footer Start -->
+  <footer style="background-color:#2d2d2d; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+
+      <!-- Company Info -->
+      <div style="flex: 1 1 250px; margin-bottom: 20px;">
+        <h2 style="margin-bottom: 10px; color: #f4b400;">MWF</h2>
+        <p>Mayondo Wood and Furniture specializes in handcrafted wooden furniture and home décor items made with passion
+          and precision.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="flex: 1 1 150px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Quick Links</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Home</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">About Us</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Products</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Contact</h3>
+        <p>📍 Kampala, Uganda</p>
+        <p>📞 +256 700 123456</p>
+        <p>📧 info@mayondowood.com</p>
+      </div>
+
+      <!-- Social Media -->
+      <div style="flex: 1 1 150px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Follow Us</h3>
+        <a href="#" style="margin-right: 10px; color: #ccc;">Facebook</a><br>
+        <a href="#" style="margin-right: 10px; color: #ccc;">Instagram</a><br>
+        <a href="#" style="margin-right: 10px; color: #ccc;">WhatsApp</a>
+      </div>
+    </div>
+
+    <hr style="border-top: 1px solid #555; margin: 30px 0;">
+
+    <div style="text-align: center; color: #aaa;">
+      &copy; 2025 Mayondo Wood and Furniture. All Rights Reserved.
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+
+</body>
+
+</html>

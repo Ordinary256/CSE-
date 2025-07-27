@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Sales Sheet</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: burlywood;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    form {
+      background-color: blanchedalmond;
+      max-width: 600px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-size: 18px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-top: -35px;
+      display: flex;
+      padding-right: 30px;
+      background-color: black;
+      gap: 50px;
+      width: 50%;
+      position: fixed;
+      font-weight: bold;
+      border-radius: 100px;
+      justify-content: flex-end;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      padding: 20px;
+      width: fit-content;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #3e3e3e;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #888;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Users.html">Users</a></li>
+      <li><a href="sales.html">Sales</a></li>
+      <li><a href="suppliers.html">Suppliers</a></li>
+    </ul>
+  </header>
+  <div class="logo-container">
+    <!-- SVG Icon for Furniture (Simple Chair) -->
+    <svg class="logo-icon" viewBox="0 0 64 64" fill="none">
+      <rect x="18" y="8" width="28" height="36" rx="4" fill="#8B4513" />
+      <rect x="14" y="36" width="36" height="8" fill="#A0522D" />
+      <rect x="18" y="44" width="6" height="16" fill="#5A2D0C" />
+      <rect x="40" y="44" width="6" height="16" fill="#5A2D0C" />
+    </svg>
+
+    <!-- Business Name and Tagline -->
+    <div>
+      <div class="logo-text">MWF</div>
+      <div class="tagline">Furniture | Carpentry|Woodwork</div>
+    </div>
+  </div>
+
+  <h2>Customer Sales Sheet</h2>
+
+  <form id="salesSheetForm">
+
+    <!-- Customer Info -->
+    <label for="name">Customer Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Email Address (optional):</label>
+    <input type="email" id="email" name="email">
+
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" rows="2" required></textarea>
+
+    <!-- Sales Info -->
+    <label for="product">Product Purchased:</label>
+    <input type="text" id="product" name="product" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <label for="price">Price per Item (UGX):</label>
+    <input type="number" id="price" name="price" required>
+
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+      <option value="">-- Select Payment Method --</option>
+      <option value="Cash">Cash</option>
+      <option value="Mobile Money">Mobile Money</option>
+      <option value="Credit">Credit</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <button type="submit">Submit Sale</button>
+
+    <div class="success-message" id="successMessage">
+      ✅ Sale has been recorded successfully!
+    </div>
+  </form>
+
+  <script>
+    document.getElementById('salesSheetForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Show success message
+      document.getElementById('successMessage').style.display = 'block';
+
+      // Optionally clear form
+      this.reset();
+    });
+  </script> <br><br>
+
+  <!-- Footer Start -->
+  <footer style="background-color:#2d2d2d; color: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+
+      <!-- Company Info -->
+      <div style="flex: 1 1 250px; margin-bottom: 20px;">
+        <h2 style="margin-bottom: 10px; color: #f4b400;">MWF</h2>
+        <p>Mayondo Wood and Furniture specializes in handcrafted wooden furniture and home décor items made with passion
+          and precision.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="flex: 1 1 150px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Quick Links</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Home</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">About Us</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Products</a></li>
+          <li><a href="#" style="color: #ccc; text-decoration: none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1 1 200px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Contact</h3>
+        <p>📍 Kampala, Uganda</p>
+        <p>📞 +256 700 123456</p>
+        <p>📧 info@mayondowood.com</p>
+      </div>
+
+      <!-- Social Media -->
+      <div style="flex: 1 1 150px; margin-bottom: 20px;">
+        <h3 style="margin-bottom: 10px;">Follow Us</h3>
+        <a href="#" style="margin-right: 10px; color: #ccc;">Facebook</a><br>
+        <a href="#" style="margin-right: 10px; color: #ccc;">Instagram</a><br>
+        <a href="#" style="margin-right: 10px; color: #ccc;">WhatsApp</a>
+      </div>
+    </div>
+
+    <hr style="border-top: 1px solid #555; margin: 30px 0;">
+
+    <div style="text-align: center; color: #aaa;">
+      &copy; 2025 Mayondo Wood and Furniture. All Rights Reserved.
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+</body>
+
+</html>
